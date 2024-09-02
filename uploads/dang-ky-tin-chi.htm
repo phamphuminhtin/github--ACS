@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hệ thống đăng ký tín chỉ - Trường Đại học CNTT&TT Việt - Hàn</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">   
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="https://dk1.vku.udn.vn/vendor/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="https://dk1.vku.udn.vn/vendor/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <!-- bootstrap-progressbar -->
+    <link href="https://dk1.vku.udn.vn/vendor/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="https://dk1.vku.udn.vn/vendor/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="https://dk1.vku.udn.vn/vendor/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="https://dk1.vku.udn.vn/vendor/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="https://dk1.vku.udn.vn/vendor/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="https://dk1.vku.udn.vn/vendor/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+	
+    <!-- jquery -->
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- Custom Theme Style -->
+    <link href="https://dk1.vku.udn.vn/public/gv/build/css/custom.min.css" rel="stylesheet">
+      <!-- <meta name="csrf-token" content="00DlqSUVQZvlpsSF887pQq7b8cYQSOLovGcPBPYN" /> -->
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="/" class="site_title"><i class="fa fa-university"></i> <span>VKU!</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              
+              <div class="profile_info">
+                <span>Xin chào,</span>
+				                <h2>NGUYỄN ĐĂNG HƯNG</h2>
+				              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+               
+                <ul class="nav side-menu">
+				  <li><a href="#" ><i class="fa fa-plus-circle"></i>Đăng ký tín chỉ</a>
+				  <ul class="nav child_menu">
+					  <li><a href="https://dk1.vku.udn.vn/sv/phan-luong" ><i class="fa fa-calendar-o"></i>Phân luồng đăng ký</a></li>
+					  <li><a href="https://dk1.vku.udn.vn/sv/lich-hoc" ><i class="fa fa-calendar-o"></i>Lịch học dự kiến</a></li>
+					  <li><a href="https://dk1.vku.udn.vn/sv/dang-ky-tin-chi" ><i class="fa fa-bookmark"></i>Đăng ký khối lượng</a></li>
+					  <li><a target="_blank" href="https://daotao.vku.udn.vn/sv/dang-ky-hoc-ghep" ><i class="fa fa-book"></i>Đăng ký học cải thiện</a></li>
+					  
+				  </ul>  
+                  </li>
+                </ul>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    NGUYỄN ĐĂNG HƯNG - 22IT122
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                  
+                    <li><a href="/sv/logout/"><i class="fa fa-sign-out pull-right"></i> Thoát</a></li>
+                  </ul>
+                  
+                </li>
+				
+				
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+
+          <!-- top tiles -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="row">
+            <!-- page content -->
+  <!-- top tiles -->
+  <script type="text/javascript">
+		function SummerizeTable(table) {
+		  $(table).each(function() {
+			$(table).find('td:nth-child(1), td:nth-child(2)').each(function() {
+			  var $this = $(this);
+			  var col = $this.index();
+			  var html = $this.html();
+			  var row = $(this).parent()[0].rowIndex; 
+			  var span = 1;
+			  var cell_above = $($this.parent().prev().children()[col]);
+
+			  // look for cells one above another with the same text
+			  while (cell_above.html() === html) { // if the text is the same
+				span += 1; // increase the span
+				cell_above_old = cell_above; // store this cell
+				cell_above = $(cell_above.parent().prev().children()[col]); // and go to the next cell above
+			  }
+
+			  // if there are at least two columns with the same value, 
+			  // set a new span to the first and hide the other
+			  if (span > 1) {
+				// console.log(span);
+				$(cell_above_old).attr('rowspan', span);
+				$this.hide();
+			  }
+			  
+			});
+		  });
+		}
+		$( document ).ready(function() {
+			SummerizeTable(".hientai");
+		});
+		</script>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+	<div class="Khaosat">
+        <table class="table table-striped jambo_table bulk_action">
+            <tr>
+                <td>Đăng ký khối lượng học tập Học kỳ 2 - Năm học: 2023-2024</td>
+                <td width="50%">Đăng ký theo nhóm: &nbsp;<span class="fa fa-fw fa-calendar"></span><b>18:00 17/12/2023 - 11:00 18/12/2023</b>
+				<br/>
+				Đăng ký toàn trường:  <span class="fa fa-fw fa-calendar"></span><b> 00:00 21/12/2023 - 23:59 22/12/2023		
+				<br/></b>
+				Hiệu chỉnh đăng ký: &nbsp; <span class="fa fa-fw fa-calendar"></span><b> 00:00 21/12/2023 - 23:59 22/12/2023		
+			</td>
+			<td>Số TC ĐK tối thiểu: <b>14TC</b>. Số TC ĐK tối đa: <b>24TC</b>.<br/>Bạn đã đăng ký <b style="color: #008000">19TC</b> </td>
+        </tr>
+           
+        </table>
+		<button style="display:none" data-toggle="modal" data-target="#myChoice" type="button" class="btnView btn-light">Xem</button>
+		<h2><span class="fa fa-fw fa-th-list"></span> Các lớp học phần đã đăng ký thành công</h2>
+		
+					<table style="background: #FFF" class="hientai table table-striped jambo_table bulk_action">
+			<thead>
+			<tr>
+				<th style="width: 40px;">STT</th>
+				<th class="hidden-xs" >Mã học phần</th>
+				<th>Tên học phần</th>
+				<th style="text-align:center">Số TC</th>
+				<th style="">Giảng viên</th>
+				<th style="">Thời khóa biểu</th>
+				<th style="">Tuần học</th>
+				<th></th>
+			</tr>
+			</thead>
+			<tbody>
+							<tr>
+					<td  style="vertical-align:middle" align="center">
+					1					</td>
+					<td class="hidden-xs" style="vertical-align:middle">CE2002</td>
+					<td style="vertical-align:middle;">Nguyên lý hệ điều hành (9)_TA</td>
+					<td style="vertical-align:middle" align="center">2</td>
+					<td style="vertical-align:middle">TS Hoàng Hữu Đức</td>
+					<td style="vertical-align:middle">T.Ba 3->4 </td>
+					<td style="vertical-align:middle">25->27,30->39,41->43</td>
+					<td style="vertical-align:middle">
+													<a onclick="return confirm('Bạn có chắc chắn muốn xóa học phần Nguyên lý hệ điều hành (9)_TA không')" href="/sv/xoa-dang-ky-tung-lophp?id=21"><button class="btn btn-warning">Hủy</button>
+											</td>
+				</tr>
+							<tr>
+					<td  style="vertical-align:middle" align="center">
+					2					</td>
+					<td class="hidden-xs" style="vertical-align:middle">AI2002</td>
+					<td style="vertical-align:middle;">Toán rời rạc (12)</td>
+					<td style="vertical-align:middle" align="center">2</td>
+					<td style="vertical-align:middle">ThS Nguyễn Ngọc Huyền Trân</td>
+					<td style="vertical-align:middle">T.Năm 8->9 </td>
+					<td style="vertical-align:middle">25->27,30->37,39->43</td>
+					<td style="vertical-align:middle">
+													<a onclick="return confirm('Bạn có chắc chắn muốn xóa học phần Toán rời rạc (12) không')" href="/sv/xoa-dang-ky-tung-lophp?id=39"><button class="btn btn-warning">Hủy</button>
+											</td>
+				</tr>
+							<tr>
+					<td  style="vertical-align:middle" align="center">
+					3					</td>
+					<td class="hidden-xs" style="vertical-align:middle">GDTC4</td>
+					<td style="vertical-align:middle;">GDTC 4 (Cầu lông) (4)</td>
+					<td style="vertical-align:middle" align="center">1</td>
+					<td style="vertical-align:middle">Khoa Khoa  GDTC</td>
+					<td style="vertical-align:middle">T.Tư 1->2 </td>
+					<td style="vertical-align:middle">25->27,30->39,41->42</td>
+					<td style="vertical-align:middle">
+													<a onclick="return confirm('Bạn có chắc chắn muốn xóa học phần GDTC 4 (Cầu lông) (4) không')" href="/sv/xoa-dang-ky-tung-lophp?id=50"><button class="btn btn-warning">Hủy</button>
+											</td>
+				</tr>
+							<tr>
+					<td  style="vertical-align:middle" align="center">
+					4					</td>
+					<td class="hidden-xs" style="vertical-align:middle">CS2011</td>
+					<td style="vertical-align:middle;">Lập trình di động (9)</td>
+					<td style="vertical-align:middle" align="center">3</td>
+					<td style="vertical-align:middle">TS Nguyễn Văn  Bình</td>
+					<td style="vertical-align:middle">T.Sáu 1->4 </td>
+					<td style="vertical-align:middle">25->27,30->42</td>
+					<td style="vertical-align:middle">
+													<a onclick="return confirm('Bạn có chắc chắn muốn xóa học phần Lập trình di động (9) không')" href="/sv/xoa-dang-ky-tung-lophp?id=51"><button class="btn btn-warning">Hủy</button>
+											</td>
+				</tr>
+							<tr>
+					<td  style="vertical-align:middle" align="center">
+					5					</td>
+					<td class="hidden-xs" style="vertical-align:middle">CE2016</td>
+					<td style="vertical-align:middle;">Vi điều khiển (10)</td>
+					<td style="vertical-align:middle" align="center">3</td>
+					<td style="vertical-align:middle">ThS Trần Thị Trà Vinh</td>
+					<td style="vertical-align:middle">T.Hai 6->9 </td>
+					<td style="vertical-align:middle">25->27,30->42</td>
+					<td style="vertical-align:middle">
+													<a onclick="return confirm('Bạn có chắc chắn muốn xóa học phần Vi điều khiển (10) không')" href="/sv/xoa-dang-ky-tung-lophp?id=54"><button class="btn btn-warning">Hủy</button>
+											</td>
+				</tr>
+							<tr>
+					<td  style="vertical-align:middle" align="center">
+					6					</td>
+					<td class="hidden-xs" style="vertical-align:middle">NS1013</td>
+					<td style="vertical-align:middle;">Xác suất thống kê (9)_K22</td>
+					<td style="vertical-align:middle" align="center">2</td>
+					<td style="vertical-align:middle">ThS Trần Thị Bích Hòa</td>
+					<td style="vertical-align:middle">T.Ba 6->7 </td>
+					<td style="vertical-align:middle">25->27,30->39,41->43</td>
+					<td style="vertical-align:middle">
+													<a onclick="return confirm('Bạn có chắc chắn muốn xóa học phần Xác suất thống kê (9)_K22 không')" href="/sv/xoa-dang-ky-tung-lophp?id=55"><button class="btn btn-warning">Hủy</button>
+											</td>
+				</tr>
+							<tr>
+					<td  style="vertical-align:middle" align="center">
+					7					</td>
+					<td class="hidden-xs" style="vertical-align:middle">IS2001</td>
+					<td style="vertical-align:middle;">Mạng máy tính (9)</td>
+					<td style="vertical-align:middle" align="center">3</td>
+					<td style="vertical-align:middle">ThS Ninh Khánh Chi</td>
+					<td style="vertical-align:middle">T.Năm 1->4 </td>
+					<td style="vertical-align:middle">25->27,30->37,39->43</td>
+					<td style="vertical-align:middle">
+													<a onclick="return confirm('Bạn có chắc chắn muốn xóa học phần Mạng máy tính (9) không')" href="/sv/xoa-dang-ky-tung-lophp?id=239"><button class="btn btn-warning">Hủy</button>
+											</td>
+				</tr>
+							<tr>
+					<td  style="vertical-align:middle" align="center">
+					8					</td>
+					<td class="hidden-xs" style="vertical-align:middle">CS2014</td>
+					<td style="vertical-align:middle;">Đồ án cơ sở 3 (IT) (4)_IR,NS</td>
+					<td style="vertical-align:middle" align="center">1</td>
+					<td style="vertical-align:middle">Khoa Khoa KTMT_ĐT</td>
+					<td style="vertical-align:middle">  </td>
+					<td style="vertical-align:middle">25->27,30->42</td>
+					<td style="vertical-align:middle">
+													<a onclick="return confirm('Bạn có chắc chắn muốn xóa học phần Đồ án cơ sở 3 (IT) (4)_IR,NS không')" href="/sv/xoa-dang-ky-tung-lophp?id=360"><button class="btn btn-warning">Hủy</button>
+											</td>
+				</tr>
+							<tr>
+					<td  style="vertical-align:middle" align="center">
+					9					</td>
+					<td class="hidden-xs" style="vertical-align:middle">FL2019</td>
+					<td style="vertical-align:middle;">Tiếng Anh nâng cao 2 (15)</td>
+					<td style="vertical-align:middle" align="center">2</td>
+					<td style="vertical-align:middle">ThS Nguyễn Thị Tuyết</td>
+					<td style="vertical-align:middle">T.Hai 3->4 </td>
+					<td style="vertical-align:middle">25->27,30->42</td>
+					<td style="vertical-align:middle">
+													<a onclick="return confirm('Bạn có chắc chắn muốn xóa học phần Tiếng Anh nâng cao 2 (15) không')" href="/sv/xoa-dang-ky-tung-lophp?id=550"><button class="btn btn-warning">Hủy</button>
+											</td>
+				</tr>
+							<tr>
+					<td colspan="3" align="right">Tổng TC</td>
+					<td align="center" style="color:#008000">19</td>
+					<td colspan="4"></td>
+				</tr>
+				<tr>
+					<td colspan="8"></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<hr/>
+		<h2><span class="fa fa-fw fa-th-list"></span> B1. Chọn đăng ký các lớp học phần theo nhóm</h2>
+		<center>
+				
+				</center>
+		
+		<hr/>
+		
+		<div class="modal fade" id="myChoice" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" style="width:70%" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">DANH SÁCH CÁC LỚP HỌC PHẦN</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+			  <div class="modal-body">
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
+		
+				<h2><span class="fa fa-fw fa-th-list"></span> B2. Chọn đăng ký các học phần chọn riêng lẻ</h2>
+				<table class="table table-striped jambo_table bulk_action">
+			<thead>
+			<tr>
+				<th style="width: 40px;">STT</th>
+				<th class="hidden-xs" style="width: 10%;">Mã học phần</th>
+				<th width="50%">Tên học phần</th>
+				<th style="text-align:center;width: 10%;">Số tín chỉ</th>
+				<th style="text-align:center">Xem chi tiết các lớp học phần</th>
+				<th style="text-align:center">Tình trạng đã đăng ký</th>
+			</tr>
+			</thead>
+			<tbody>
+										<tr>
+							<td>1</td>
+							<td class="hidden-xs" >CE20042</td>
+							<td>Cấu kiện điện tử</td>
+							<td align="center">2</td>
+							<td align="center">
+								<button data-id="195" class="xem btn btn-success">Xem</button>
+														<!-- <button data-id="195" class="xem btn btn-success">Xem</button> -->
+														</td>
+							<td style="text-align:center">
+														</td>
+						</tr>
+												<tr>
+							<td>2</td>
+							<td class="hidden-xs" >CS2009</td>
+							<td>Công nghệ và lập trình web</td>
+							<td align="center">3</td>
+							<td align="center">
+								<button data-id="188" class="xem btn btn-success">Xem</button>
+														</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>3</td>
+							<td class="hidden-xs" >CS2014</td>
+							<td>Đồ án cơ sở 3 IT</td>
+							<td align="center">1</td>
+							<td align="center">
+								<button data-id="360" class="xem btn btn-success">Xem</button>
+														</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>4</td>
+							<td class="hidden-xs" >DA2039</td>
+							<td>Đồ họa 2D</td>
+							<td align="center">2</td>
+							<td align="center">
+								<button data-id="387" class="xem btn btn-success">Xem</button>
+														<!-- <button data-id="387" class="xem btn btn-success">Xem</button> -->
+														</td>
+							<td style="text-align:center">
+														</td>
+						</tr>
+												<tr>
+							<td>5</td>
+							<td class="hidden-xs" >CE2022</td>
+							<td>Hệ thống số</td>
+							<td align="center">2</td>
+							<td align="center">
+								<button data-id="34" class="xem btn btn-success">Xem</button>
+														<!-- <button data-id="34" class="xem btn btn-success">Xem</button> -->
+														</td>
+							<td style="text-align:center">
+														</td>
+						</tr>
+												<tr>
+							<td>6</td>
+							<td class="hidden-xs" >CS2011</td>
+							<td>Lập trình di động</td>
+							<td align="center">3</td>
+							<td align="center">
+								<button data-id="51" class="xem btn btn-success">Xem</button>
+														</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>7</td>
+							<td class="hidden-xs" >IS2001</td>
+							<td>Mạng máy tính</td>
+							<td align="center">3</td>
+							<td align="center">
+								<button data-id="239" class="xem btn btn-success">Xem</button>
+														</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>8</td>
+							<td class="hidden-xs" >CE2002</td>
+							<td>Nguyên lý hệ điều hành</td>
+							<td align="center">2</td>
+							<td align="center">
+								<button data-id="21" class="xem btn btn-success">Xem</button>
+														</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>9</td>
+							<td class="hidden-xs" >AI2002</td>
+							<td>Toán rời rạc</td>
+							<td align="center">2</td>
+							<td align="center">
+								<button data-id="39" class="xem btn btn-success">Xem</button>
+														</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>10</td>
+							<td class="hidden-xs" >CE2016</td>
+							<td>Vi điều khiển</td>
+							<td align="center">3</td>
+							<td align="center">
+								<button data-id="54" class="xem btn btn-success">Xem</button>
+														</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>11</td>
+							<td class="hidden-xs" >DA2059</td>
+							<td>Xử lý ảnh cơ bản</td>
+							<td align="center">2</td>
+							<td align="center">
+								<button data-id="287" class="xem btn btn-success">Xem</button>
+														<!-- <button data-id="287" class="xem btn btn-success">Xem</button> -->
+														</td>
+							<td style="text-align:center">
+														</td>
+						</tr>
+												<tr>
+							<td>12</td>
+							<td class="hidden-xs" >CS2003</td>
+							<td>Cấu trúc dữ liệu và giải thuật</td>
+							<td align="center">3</td>
+							<td align="center">
+								<button data-id="15" class="xem btn btn-success">Xem</button>
+														</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>13</td>
+							<td class="hidden-xs" >NS1010</td>
+							<td>Đại số tuyến tính</td>
+							<td align="center">2</td>
+							<td align="center">
+								<button data-id="362" class="xem btn btn-success">Xem</button>
+														</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>14</td>
+							<td class="hidden-xs" >CI2005</td>
+							<td>Đồ án cơ sở 1</td>
+							<td align="center">1</td>
+							<td align="center">
+								<button data-id="364" class="xem btn btn-success">Xem</button>
+														</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>15</td>
+							<td class="hidden-xs" >CS2008</td>
+							<td>Thiết kế web</td>
+							<td align="center">3</td>
+							<td align="center">
+								<button data-id="259" class="xem btn btn-success">Xem</button>
+														</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>16</td>
+							<td class="hidden-xs" >CE2003</td>
+							<td>Kiến trúc máy tính</td>
+							<td align="center">2</td>
+							<td align="center">
+								<button data-id="19" class="xem btn btn-success">Xem</button>
+														</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>17</td>
+							<td class="hidden-xs" >CE2005</td>
+							<td>Kỹ thuật mạch điện tử</td>
+							<td align="center">3</td>
+							<td align="center">
+								<button data-id="274" class="xem btn btn-success">Xem</button>
+														<!-- <button data-id="274" class="xem btn btn-success">Xem</button> -->
+														</td>
+							<td style="text-align:center">
+														</td>
+						</tr>
+												<tr>
+							<td>18</td>
+							<td class="hidden-xs" >CS2010</td>
+							<td>Lập trình Java</td>
+							<td align="center">3</td>
+							<td align="center">
+								<button data-id="363" class="xem btn btn-success">Xem</button>
+														</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>19</td>
+							<td class="hidden-xs" >AI2001</td>
+							<td>Lập trình Python</td>
+							<td align="center">3</td>
+							<td align="center">
+								<button data-id="260" class="xem btn btn-success">Xem</button>
+														<!-- <button data-id="260" class="xem btn btn-success">Xem</button> -->
+														</td>
+							<td style="text-align:center">
+														</td>
+						</tr>
+												<tr>
+							<td>20</td>
+							<td class="hidden-xs" >CS2018</td>
+							<td>Tiếng Anh chuyên ngành 2</td>
+							<td align="center">2</td>
+							<td align="center">
+								<button data-id="23" class="xem btn btn-success">Xem</button>
+														</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>21</td>
+							<td class="hidden-xs" >NS1013</td>
+							<td>Xác suất thống kê</td>
+							<td align="center">2</td>
+							<td align="center">
+								<button data-id="55" class="xem btn btn-success">Xem</button>
+														</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>22</td>
+							<td class="hidden-xs" >CS2023</td>
+							<td>Phân tích và thiết kế giải thuật</td>
+							<td align="center">2</td>
+							<td align="center">
+								<button data-id="248" class="xem btn btn-success">Xem</button>
+														<!-- <button data-id="248" class="xem btn btn-success">Xem</button> -->
+														</td>
+							<td style="text-align:center">
+														</td>
+						</tr>
+									</tbody>
+		</table>
+		
+		 
+		
+		
+		<hr/>
+		<h2><span class="fa fa-fw fa-th-list"></span> B3. Chọn đăng ký học phần tự chọn</h2>
+				<h2><span class="fa fa-fw fa-th-list"></span> B4. Chọn đăng ký nhóm HP đăng ký toàn trường </h2>
+		<hr/>
+		
+		<table class="table table-striped jambo_table bulk_action">
+			<thead>
+			<tr>
+				<th style="width: 40px;">STT</th>
+				<th class="hidden-xs" style="width: 10%;">Mã học phần</th>
+				<th width="50%">Tên học phần</th>
+				<th style="text-align:center;width: 10%;">Số tín chỉ</th>
+				<th style="text-align:center">Xem chi tiết các lớp học phần</th>
+				<th style="text-align:center">Tình trạng đăng ký<span class="hidden-xs"> (đã học)</span></th>
+			</tr>
+			</thead>
+			<tbody>
+										<tr>
+							<td>1</td>
+							<td class="hidden-xs" >SS1003</td>
+							<td>Chủ nghĩa xã hội khoa học</td>
+							<td align="center">2</td>
+							<td align="center">
+														<button data-id="106" class="xem btn btn-success">Xem</button>
+													<!-- <button data-id="106" class="xem btn btn-success">Xem</button> -->
+														</td>
+							<td style="text-align:center">
+														</td>
+						</tr>
+												<tr>
+							<td>2</td>
+							<td class="hidden-xs" >SS1005</td>
+							<td>Lịch sử Đảng Cộng sản Việt Nam</td>
+							<td align="center">2</td>
+							<td align="center">
+														<button data-id="79" class="xem btn btn-success">Xem</button>
+													<!-- <button data-id="79" class="xem btn btn-success">Xem</button> -->
+														</td>
+							<td style="text-align:center">
+														</td>
+						</tr>
+												<tr>
+							<td>3</td>
+							<td class="hidden-xs" >SS1006</td>
+							<td>Pháp luật đại cương</td>
+							<td align="center">2</td>
+							<td align="center">
+														<button data-id="1" class="xem btn btn-success">Xem</button>
+													<!-- <button data-id="1" class="xem btn btn-success">Xem</button> -->
+														</td>
+							<td style="text-align:center">
+														</td>
+						</tr>
+												<tr>
+							<td>4</td>
+							<td class="hidden-xs" >SS1001</td>
+							<td>Triết học Mác - Lênin</td>
+							<td align="center">3</td>
+							<td align="center">
+														<button data-id="81" class="xem btn btn-success">Xem</button>
+													<!-- <button data-id="81" class="xem btn btn-success">Xem</button> -->
+														</td>
+							<td style="text-align:center">
+														</td>
+						</tr>
+												<tr>
+							<td>5</td>
+							<td class="hidden-xs" >ENG-ELE1</td>
+							<td>Tiếng Anh 1</td>
+							<td align="center">3</td>
+							<td align="center">
+														<button data-id="12" class="xem btn btn-success">Xem</button>
+													</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>6</td>
+							<td class="hidden-xs" >ENG-ELE2</td>
+							<td>Tiếng Anh 2</td>
+							<td align="center">2</td>
+							<td align="center">
+														<button data-id="22" class="xem btn btn-success">Xem</button>
+													</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>7</td>
+							<td class="hidden-xs" >ENG-ELE3</td>
+							<td>Tiếng Anh 3</td>
+							<td align="center">2</td>
+							<td align="center">
+														<button data-id="37" class="xem btn btn-success">Xem</button>
+													</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>8</td>
+							<td class="hidden-xs" >FL2018</td>
+							<td>Tiếng Anh nâng cao 1</td>
+							<td align="center">2</td>
+							<td align="center">
+														<button data-id="545" class="xem btn btn-success">Xem</button>
+													</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>9</td>
+							<td class="hidden-xs" >FL2019</td>
+							<td>Tiếng Anh nâng cao 2</td>
+							<td align="center">2</td>
+							<td align="center">
+														<button data-id="550" class="xem btn btn-success">Xem</button>
+													</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>10</td>
+							<td class="hidden-xs" >FL2022</td>
+							<td>Tiếng Hàn 1</td>
+							<td align="center">2</td>
+							<td align="center">
+														<button data-id="528" class="xem btn btn-success">Xem</button>
+													<!-- <button data-id="528" class="xem btn btn-success">Xem</button> -->
+														</td>
+							<td style="text-align:center">
+														</td>
+						</tr>
+												<tr>
+							<td>11</td>
+							<td class="hidden-xs" >GDTC1</td>
+							<td>Giáo dục thể chất 1</td>
+							<td align="center">1</td>
+							<td align="center">
+														<button data-id="8" class="xem btn btn-success">Xem</button>
+													<!-- <button data-id="8" class="xem btn btn-success">Xem</button> -->
+														</td>
+							<td style="text-align:center">
+														</td>
+						</tr>
+												<tr>
+							<td>12</td>
+							<td class="hidden-xs" >GDTC2</td>
+							<td>Giáo dục thể chất 2</td>
+							<td align="center">1</td>
+							<td align="center">
+														<button data-id="18" class="xem btn btn-success">Xem</button>
+													<!-- <button data-id="18" class="xem btn btn-success">Xem</button> -->
+														</td>
+							<td style="text-align:center">
+														</td>
+						</tr>
+												<tr>
+							<td>13</td>
+							<td class="hidden-xs" >GDTC3</td>
+							<td>Giáo dục thể chất 3</td>
+							<td align="center">1</td>
+							<td align="center">
+														<button data-id="33" class="xem btn btn-success">Xem</button>
+													</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>14</td>
+							<td class="hidden-xs" >GDTC4</td>
+							<td>Giáo dục thể chất 4</td>
+							<td align="center">1</td>
+							<td align="center">
+														<button data-id="50" class="xem btn btn-success">Xem</button>
+													</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>15</td>
+							<td class="hidden-xs" >DE1002</td>
+							<td>Khởi nghiệp và đổi mới sáng tạo</td>
+							<td align="center">2</td>
+							<td align="center">
+														<button data-id="179" class="xem btn btn-success">Xem</button>
+													</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>16</td>
+							<td class="hidden-xs" >GDQP</td>
+							<td>Giáo dục quốc phòng</td>
+							<td align="center">0</td>
+							<td align="center">
+														<button data-id="63" class="xem btn btn-success">Xem</button>
+													</td>
+							<td style="text-align:center">
+							X							</td>
+						</tr>
+												<tr>
+							<td>17</td>
+							<td class="hidden-xs" >SS1002</td>
+							<td>Kinh tế chính trị Mác - Lênin</td>
+							<td align="center">2</td>
+							<td align="center">
+														<button data-id="105" class="xem btn btn-success">Xem</button>
+													<!-- <button data-id="105" class="xem btn btn-success">Xem</button> -->
+														</td>
+							<td style="text-align:center">
+														</td>
+						</tr>
+									</tbody>
+		</table>
+		
+		 
+				Lưu ý: <br/>
+		- <span style="color: #008000; font-weight:bold">Sinh viên chú ý đăng ký tuần tự theo các bước: Bước 1 (đăng ký theo nhóm), Bước 2 (đăng ký HP riêng lẻ), Bước 3 (đăng ký học phần tự chọn), Bước 4 (đăng ký học phần toàn trường). Sinh viên chú ý khi chọn đăng ký bước 1 đăng ký nhanh SẼ XÓA các học phần đã đăng ký ở bước 2,3,4</span><br/>
+		- Sinh viên căn cứ kế hoạch năm học, danh mục các học phần giảng dạy, tư vấn của Giảng viên cố vấn học tập để tiến hành đăng ký (đặc biệt là chọn các học phần tự chọn)<br/>
+		- Trong trường hợp sinh viên muốn học ghép, học cải thiện, sinh viên cần chờ các thông báo tiếp theo của Phòng Đào tạo hoặc liên lạc ngay qua Fanpage <a style="font-weight:bold;" href="https://fb.com/daotao.vku.udn.vn">Phòng Đào tạo</a> để được hỗ trợ kịp thời.<br/>
+		- Đối với trường hợp sinh viên có nhu cầu đăng ký học lại/cải thiện: sinh viên sẽ thực hiện đăng ký theo lịch thông báo<br/>
+		- Đối với học phần chưa được tổ chức trong học kỳ hoặc hết chỗ đăng ký, sinh viên sẽ thực hiện đăng ký vào thời gian đăng ký nhu cầu mở lớp, đăng ký lớp mở bổ sung để nhà trường xem xét về việc mở lớp.<br/>
+		- Trong thời gian hiệu chỉnh đăng ký: từ <b>00:00 21/12/2023 - 23:59 22/12/2023</b> sinh viên có thể hoàn toàn chủ động hiệu chỉnh các môn đã đăng ký để đăng ký thêm một số môn yêu thích, đăng ký học lại hoặc tạo lịch học phù hợp cho bản thân<br/>
+		</div>
+    </div>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+
+<script>
+	(function ($) {	
+		$("input:radio").click(function () {
+			$(".btnNhom").attr("disabled", null);
+		});
+
+		$('.btnNhom').click(function () {
+		  event.preventDefault();
+		  this.blur(); 
+		  $(".modal-body").html("<div style='text-align:center'><img align='center' src='https://dk1.vku.udn.vn/images/popup/loading.gif' style='width:64px;z-index:1000;margin-left:50%' /></div>");
+		  nhom = $('input[name=nhom]:checked').val();
+		  $.get("/sv/chon-nhom?id="+nhom, function(html) {
+			  $(".modal-body").html(html);
+			  $(".btnView").click();
+		  });
+		}); 
+		$('.xem').click(function () {
+			event.preventDefault();
+			this.blur(); 
+			$(".modal-body").html("<img src='https://dk1.vku.udn.vn/images/popup/loading.gif' style='width:64px;z-index:1000;margin-left:50%' />");
+			idhocphan = $(this).data("id");
+			$(".btnView").click();
+			$.get("/sv/tin-chi-xem-chi-tiet?id="+idhocphan, function(html) {
+			$(".modal-body").html(html);
+		  
+		});
+		 
+	});
+})(jQuery);
+</script>
+<style>
+.ui-dialog {min-width: 700px }
+@media (max-width: 768px){
+	.modal-body {padding:1px !important; overflow: scroll;}
+	.modal-dialog {
+		width: 100% !important;
+		margin: 30px auto;
+	}
+}
+</style>
+<div id="loading" style="display:none; position: fixed; width: 100%; background: #FFF; height: 100%;  z-index:10000 !important; top:0px; left:0px">
+	<img src="https://dk1.vku.udn.vn/images/popup/loading.gif"  style="top: 50%; left: 60%; position:fixed; margin-top: -100px; margin-left: -250px; width:96px;" />
+</div>
+
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+          <footer>
+            <div class="pull-right">
+              ©Bản quyền thuộc về <a href="//daotao.vku.udn.vn">Trường ĐH CNTT&TT Việt - Hàn</a> - Đại học Đà Nẵng
+            </div>
+            <div class="clearfix"></div>
+          </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   
+    <!-- Datatables -->
+    <script src="https://dk1.vku.udn.vn/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="https://dk1.vku.udn.vn/vendor/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://dk1.vku.udn.vn/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="https://dk1.vku.udn.vn/vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="https://dk1.vku.udn.vn/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="https://dk1.vku.udn.vn/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="https://dk1.vku.udn.vn/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="https://dk1.vku.udn.vn/vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="https://dk1.vku.udn.vn/vendor/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="https://dk1.vku.udn.vn/vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="https://dk1.vku.udn.vn/vendor/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="https://dk1.vku.udn.vn/vendor/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="https://dk1.vku.udn.vn/vendor/jszip/dist/jszip.min.js"></script>
+    <script src="https://dk1.vku.udn.vn/vendor/pdfmake/build/pdfmake.min.js"></script>
+    <script src="https://dk1.vku.udn.vn/vendor/pdfmake/build/vfs_fonts.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="https://dk1.vku.udn.vn/public/gv/build/js/custom.min.js"></script>
+	<!-- Load Facebook SDK for JavaScript -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118234607-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-118234607-2');
+</script>	
+  </body>
+</html>
